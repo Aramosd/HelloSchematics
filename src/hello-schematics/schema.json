@@ -13,14 +13,13 @@
                 "index": 0              // the first argument
             },
             "x-prompt": "Who do we want to greet?"
+        },
+        "project": {
+            "type": "string",
+            "description": "Generate in specific Angular CLI workspace project"
         }
     },
     "required": [
     "name"
     ]
 }
-/*
-    schematics .: hello Tomas (positional)
-    vs
-    schematics .:hello --name=Tomas (standard)
-*/
