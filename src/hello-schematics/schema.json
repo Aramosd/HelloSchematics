@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/schema", // Enables Code Completion
+    "$id": "HelloSchematics",
+    "title": "Hello Options Schema",
+    "type": "object",
+    "description": "Says hello to someone",
+    "properties": {
+        "name": {                               // Option itself
+            "type": "string",
+            "description": "The name of the person",
+            "$default": {               // Positional default value
+                "$source": "argv",      // from command line args
+                "index": 0              // the first argument
+            },
+            "x-prompt": "Who do we want to greet?"
+        }
+    },
+    "required": [
+    "name"
+    ]
+}
+/*
+    schematics .: hello Tomas (positional)
+    vs
+    schematics .:hello --name=Tomas (standard)
+*/
