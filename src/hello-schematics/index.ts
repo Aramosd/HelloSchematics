@@ -5,7 +5,7 @@ import { HelloSchema } from './schema';
 
 
 // this is a schematic factory function which returns a rule (a function)
-export function hello(_options: HelloSchema): Rule {
+export function helloSchematics(_options: HelloSchema): Rule {
   // this is a schematic rule
   return (tree: Tree, _context: SchematicContext) => {
     /*
