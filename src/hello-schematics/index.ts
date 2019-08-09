@@ -24,11 +24,16 @@ export function helloSchematics(_options: HelloSchema): Rule {
     const sourceParametrizedTemplates = apply(sourceTemplates, [
       template({
         ..._options,
-        ...strings
+        ...strings,
+        addExclamation
       })
     ]);
 
     // return mergeWith(sourceParametrizedTemplates);
     return mergeWith(sourceParametrizedTemplates)(tree, _context);
   };
+}
+
+function addExclamation(value: string): string {
+  return value + '!';
 }
